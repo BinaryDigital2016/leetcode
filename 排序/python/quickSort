@@ -1,3 +1,7 @@
+### 数组快排
+TODO
+
+### 链表快排
 class LNode(object):
     def __init__(self, val):
         self.val = val
