@@ -1,5 +1,34 @@
+# coding: utf-8
+
 ### 数组快排
-TODO
+def quicksort2(arr):
+    qsort2(arr,0,len(arr)-1)
+    return arr
+
+
+def qsort2(arr,left, right):
+    if left < right:
+        pivot = partition2(arr,left, right)
+        qsort2(arr,left,pivot - 1)
+        qsort2(arr,pivot + 1,right)
+
+
+def partition2(arr,left, right):
+    pivot = arr[left]
+    i = left
+    j = right
+    while i<j:
+        while i<j and arr[j] >= pivot:
+            j-=1
+        arr[i]=arr[j]
+        while i < j and arr[i] <= pivot:
+            i += 1
+        arr[j] = arr[i]
+    arr[i]=pivot
+    return i
+
+arr = [2,12,23,3,5,8,188]
+print quicksort2(arr)
 
 ### 链表快排
 class LNode(object):
