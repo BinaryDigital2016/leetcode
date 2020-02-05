@@ -35,6 +35,9 @@
 */
 
 func isValid(s string) bool {
+	if len(s) & 1 == 1{
+        	return false
+   	}
 	stack := make([]uint8, 0)
 	for k, _ := range s {
 		if isPush(s[k]) {
