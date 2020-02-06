@@ -6,5 +6,6 @@
 - [动态规划](/dynamic_planning)
 - [队列](/queue)
 - [排序](/排序)
+- [数组](/array)
 - [others](/others)
 - todo
