@@ -5,6 +5,7 @@
 - [堆](/stack)
 - [动态规划](/dynamic_planning)
 - [队列](/queue)
+- [查找](/search)
 - [排序](/排序)
 - [数组](/array)
 - [others](/others)
