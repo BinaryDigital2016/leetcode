@@ -1,0 +1,68 @@
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+// 暴力递归（自顶向下判断）
+// func isBalanced(root *TreeNode) bool {
+//     if root == nil {
+//         return true
+//     }
+
+//     lh := height(root.Left)
+//     rh := height(root.Right)
+//     if lh - rh > 1 || lh - rh < -1{
+//         return false
+//     }
+
+//     return isBalanced(root.Left) && isBalanced(root.Right)
+// }
+
+// func height(root *TreeNode) int {
+//     if root == nil {
+//         return 0
+//     }
+
+//     return 1 + max(height(root.Left), height(root.Right))
+// }
+
+// 提前阻断返回（自底向上判断）
+func isBalanced(root *TreeNode) bool {
+    if root == nil {
+        return true
+    }
+
+    return height2(root) != -1
+}
+
+func height2(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+
+    lh := height2(root.Left)
+    if lh == -1 { // 提前返回
+        return -1
+    }
+    rh := height2(root.Right)
+    if rh == -1 {
+        return -1
+    }
+
+    if lh - rh > 1 || lh - rh < -1{ //左右子树不平衡 直接返回-1
+        return -1
+    }
+    return 1 + max(lh,rh)
+}
+
+func max(a,b int) int {
+    if a > b {
+        return a
+    }
+
+    return b
+}
