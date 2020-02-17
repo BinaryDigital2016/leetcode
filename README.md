@@ -8,5 +8,6 @@
 - [查找](/search)
 - [排序](/排序)
 - [数组](/array)
+- [贪心算法](/greedy_algorithm)
 - [others](/others)
 - todo
