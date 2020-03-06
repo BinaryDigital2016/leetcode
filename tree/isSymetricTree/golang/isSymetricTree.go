@@ -1,3 +1,11 @@
+package tree
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 /*
 给定一个二叉树，检查它是否是镜像对称的。
 
@@ -18,7 +26,6 @@
    3    3
 */
 
-
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -27,7 +34,7 @@
  *     Right *TreeNode
  * }
  */
- 
+
 // 递归
 // func isSymmetric(root *TreeNode) bool {
 //     if root == nil {
@@ -52,51 +59,49 @@
 
 // 非递归
 func isSymmetric(root *TreeNode) bool {
-    q := Queue{}
-    q.Append(root)
-    q.Append(root)
-    for !q.Empty(){
-        a := q.Pop()
-        b := q.Pop()
-        if a == nil && b == nil {
-            continue
-        }
-        if a == nil || b == nil {
-            return false
-        }
-        if a.Val != b.Val{
-            return false
-        }
-        q.Append(a.Left)
-        q.Append(b.Right)
-        q.Append(a.Right)
-        q.Append(b.Left)
-    }
-    return true
+	q := Queue{}
+	q.Append(root)
+	q.Append(root)
+	for !q.Empty() {
+		a := q.Pop()
+		b := q.Pop()
+		if a == nil && b == nil {
+			continue
+		}
+		if a == nil || b == nil {
+			return false
+		}
+		if a.Val != b.Val {
+			return false
+		}
+		q.Append(a.Left)
+		q.Append(b.Right)
+		q.Append(a.Right)
+		q.Append(b.Left)
+	}
+	return true
 }
 
-type Queue struct{
-    elem []*TreeNode
+type Queue struct {
+	elem []*TreeNode
 }
 
-func (q *Queue) Append(e *TreeNode){
-    if q.elem == nil {
-        q.elem = make([]*TreeNode,0)
-    }
-    q.elem = append(q.elem, e)
+func (q *Queue) Append(e *TreeNode) {
+	if q.elem == nil {
+		q.elem = make([]*TreeNode, 0)
+	}
+	q.elem = append(q.elem, e)
 }
 
-func (q *Queue) Pop() *TreeNode{
-    if len(q.elem) > 0{
-        t := q.elem[0]
-        q.elem = q.elem[1:]
-        return t
-    }
-    return nil
+func (q *Queue) Pop() *TreeNode {
+	if len(q.elem) > 0 {
+		t := q.elem[0]
+		q.elem = q.elem[1:]
+		return t
+	}
+	return nil
 }
 
-func (q *Queue) Empty() bool{
-    return len(q.elem)==0
+func (q *Queue) Empty() bool {
+	return len(q.elem) == 0
 }
-
-

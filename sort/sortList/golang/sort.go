@@ -1,3 +1,5 @@
+package sort
+
 /*
 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
 
@@ -12,13 +14,10 @@
 输出: -1->0->3->4->5
 */
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 // 自底向上归并
 func sortList(head *ListNode) *ListNode {
@@ -28,23 +27,23 @@ func sortList(head *ListNode) *ListNode {
 
 	n := 0
 	cur := head
-	for cur != nil  {
+	for cur != nil {
 		n++
 		cur = cur.Next
 	}
 
-	dummyHead := &ListNode{Val:0, Next:head}
+	dummyHead := &ListNode{Val: 0, Next: head}
 
-	for span:=1; span<n; span<<=1 {
+	for span := 1; span < n; span <<= 1 {
 		cur = dummyHead.Next //不能是=head, cur后head标识的链表已被修改，dummyHead指向处理后的链表
-		tail := dummyHead //已合并链表的末尾
-		for cur != nil { //一个span循环
+		tail := dummyHead    //已合并链表的末尾
+		for cur != nil {     //一个span循环
 			left := cur
-			right := cut(cur,span)
-			cur = cut(right,span)
+			right := cut(cur, span)
+			cur = cut(right, span)
 
-			tail.Next = merge(left,right)
-			for tail.Next != nil { 
+			tail.Next = merge(left, right)
+			for tail.Next != nil {
 				tail = tail.Next
 			}
 		}
@@ -53,9 +52,9 @@ func sortList(head *ListNode) *ListNode {
 }
 
 // 断掉head的前size个元素，返回剩下的head
-func cut(head *ListNode, size int) *ListNode{
+func cut(head *ListNode, size int) *ListNode {
 	cur := head
-	for cur!=nil && size > 1 {
+	for cur != nil && size > 1 {
 		cur = cur.Next
 		size--
 	}
@@ -69,11 +68,11 @@ func cut(head *ListNode, size int) *ListNode{
 	return next
 }
 
-func merge(l1 *ListNode, l2 *ListNode) *ListNode{
-	dummyHead := &ListNode{Val:0}
+func merge(l1 *ListNode, l2 *ListNode) *ListNode {
+	dummyHead := &ListNode{Val: 0}
 	cur := dummyHead
 	for l1 != nil && l2 != nil {
-		if l1.Val < l2.Val{
+		if l1.Val < l2.Val {
 			cur.Next = l1
 			l1 = l1.Next
 		} else {

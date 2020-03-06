@@ -1,3 +1,5 @@
+package others
+
 // // 暴力求解
 // func missingNumber(nums []int) int {
 //     n := len(nums)
@@ -32,11 +34,10 @@
 
 // 求和
 func missingNumber(nums []int) int {
-    sum := 0
-    for k,v:=range nums{
-        sum += k+1
-        sum -= v
-    }
-    return sum
+	sum := 0
+	for k, v := range nums {
+		sum += k + 1
+		sum -= v
+	}
+	return sum
 }
-

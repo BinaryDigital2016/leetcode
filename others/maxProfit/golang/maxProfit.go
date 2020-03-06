@@ -1,3 +1,5 @@
+package others
+
 /*
 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
 
@@ -17,7 +19,7 @@
 输入: [7,6,4,3,1]
 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
-*/
+*/import "math"
 
 // //暴力解法
 // func maxProfit(prices []int) int {
@@ -34,14 +36,14 @@
 
 //一次遍历
 func maxProfit(prices []int) int {
-    min := math.MaxInt64
-    ret := 0
-    for i:=0;i<len(prices);i++{
-        if prices[i]< min{
-            min = prices[i]
-        } else if prices[i]-min > ret{
-            ret = prices[i]-min
-        }
-    }
-    return ret
+	min := math.MaxInt64
+	ret := 0
+	for i := 0; i < len(prices); i++ {
+		if prices[i] < min {
+			min = prices[i]
+		} else if prices[i]-min > ret {
+			ret = prices[i] - min
+		}
+	}
+	return ret
 }

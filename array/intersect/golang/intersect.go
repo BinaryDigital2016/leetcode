@@ -1,3 +1,7 @@
+package array
+
+import "sort"
+
 // // map缓存
 // func intersect(nums1 []int, nums2 []int) []int {
 //     m := make(map[int]int)
@@ -19,22 +23,22 @@
 
 // 排序
 func intersect(nums1 []int, nums2 []int) []int {
-    sort.Sort(sort.IntSlice(nums1))
-    sort.Sort(sort.IntSlice(nums2))
+	sort.Sort(sort.IntSlice(nums1))
+	sort.Sort(sort.IntSlice(nums2))
 
-    i,j:=0,0
-    s := make([]int,0)
-    for i<len(nums1)&&j<len(nums2){
-        if nums1[i]<nums2[j]{
-            i++
-        } else if nums1[i]>nums2[j]{
-            j++
-        } else {
-            s = append(s, nums2[j])
-            i++
-            j++
-        }
-    }
+	i, j := 0, 0
+	s := make([]int, 0)
+	for i < len(nums1) && j < len(nums2) {
+		if nums1[i] < nums2[j] {
+			i++
+		} else if nums1[i] > nums2[j] {
+			j++
+		} else {
+			s = append(s, nums2[j])
+			i++
+			j++
+		}
+	}
 
-    return s
+	return s
 }

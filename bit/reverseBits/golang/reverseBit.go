@@ -1,3 +1,5 @@
+package bit
+
 /*
 颠倒给定的 32 位无符号整数的二进制位。
 
@@ -28,8 +30,6 @@
 //     num = ((num & 0xaaaaaaaa) >> 1) | ((num & 0x55555555) << 1);
 //     return num;
 // }
-
-
 
 // 首先先看 ret | (((n>>(31-i)) & 1) << i) 中的 ((n>>(31-i)) & 1) 这一部分做了什么操作。
 // 其实这部分所做的操作就是取出 n 的从右往左数的第 x 位的数。
@@ -64,11 +64,11 @@
 // }
 
 func reverseBits(num uint32) uint32 {
-    var r uint32 = 0
-    for i:=31;i>=0;i--{
-        t := num & 1 //取最右一位
-        r |= t << i
-        num >>= 1 //去掉最右一位
-    }
-    return r
+	var r uint32 = 0
+	for i := 31; i >= 0; i-- {
+		t := num & 1 //取最右一位
+		r |= t << i
+		num >>= 1 //去掉最右一位
+	}
+	return r
 }

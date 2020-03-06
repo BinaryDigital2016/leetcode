@@ -1,3 +1,5 @@
+package greedy
+
 /*
 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
 
@@ -40,11 +42,11 @@
 //     for i < len(prices)-1{
 //         for i < len(prices)-1 && prices[i] >= prices[i+1]{
 //             i++
-//         } 
+//         }
 //         valley = prices[i]
 //         for i < len(prices)-1 && prices[i] <= prices[i+1]{
 //             i++
-//         } 
+//         }
 //         peak = prices[i]
 //         ret += peak - valley
 //     }
@@ -54,14 +56,14 @@
 
 //贪心算法，只要下一天的价格大于当天就买入，下一天卖出
 func maxProfit(prices []int) int {
-    ret :=0
-    i := 0
-    for i < len(prices)-1{
-        if prices[i] < prices[i+1]{
-            ret += prices[i+1]-prices[i]
-        }
-        i++
-    }
+	ret := 0
+	i := 0
+	for i < len(prices)-1 {
+		if prices[i] < prices[i+1] {
+			ret += prices[i+1] - prices[i]
+		}
+		i++
+	}
 
-    return ret
+	return ret
 }

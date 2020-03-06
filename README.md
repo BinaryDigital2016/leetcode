@@ -1,4 +1,4 @@
-# 使用golang实现的leetcode算法题
+# leetcode算法题实现
 - [链表](/list)
 - [字符串](/string)
 - [树](/tree)

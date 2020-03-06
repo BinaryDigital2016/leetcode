@@ -1,3 +1,5 @@
+package string
+
 /*
 实现 strStr() 函数。
 
@@ -25,33 +27,33 @@
 // }
 
 func strStr(haystack string, needle string) int {
-    if len(needle) <= 0 || haystack == needle{
-        return 0
-    }
+	if len(needle) <= 0 || haystack == needle {
+		return 0
+	}
 
-    isFind := false
-    i:=0
-    // for ;i<len(haystack) && !isFind;i++{
-    //     for j:=0;j<len(needle);j++{
-    //         if haystack[i] != needle[j]{
-    //             break
-    //         } else {
-    //             if j == len(needle)-1{
-    //                 isFind = true
-    //             }
-    //         }
-    //     }
-    // }
+	isFind := false
+	i := 0
+	// for ;i<len(haystack) && !isFind;i++{
+	//     for j:=0;j<len(needle);j++{
+	//         if haystack[i] != needle[j]{
+	//             break
+	//         } else {
+	//             if j == len(needle)-1{
+	//                 isFind = true
+	//             }
+	//         }
+	//     }
+	// }
 
-    for ;i<=len(haystack)-len(needle);i++{
-        if haystack[i:i+len(needle)] == needle{
-            isFind = true
-            break;
-        }
-    }
+	for ; i <= len(haystack)-len(needle); i++ {
+		if haystack[i:i+len(needle)] == needle {
+			isFind = true
+			break
+		}
+	}
 
-    if isFind{
-        return i 
-    }
-    return -1
+	if isFind {
+		return i
+	}
+	return -1
 }

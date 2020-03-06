@@ -1,3 +1,5 @@
+package tree
+
 /*
 将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。
 
@@ -16,26 +18,23 @@
  -10  5
 */
 
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 // 二叉搜索树的中序遍历为有序数组，该题为二叉搜索树的逆过程，答案不唯一
 func sortedArrayToBST(nums []int) *TreeNode {
-    if len(nums) == 0 {
-        return nil 
-    }
-    
-    p := len(nums)/2
-    root := &TreeNode{Val:nums[p]}
-    root.Left = sortedArrayToBST(nums[:p])
-    root.Right = sortedArrayToBST(nums[p+1:])
-    
-    return root
+	if len(nums) == 0 {
+		return nil
+	}
+
+	p := len(nums) / 2
+	root := &TreeNode{Val: nums[p]}
+	root.Left = sortedArrayToBST(nums[:p])
+	root.Right = sortedArrayToBST(nums[p+1:])
+
+	return root
 
 }

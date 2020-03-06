@@ -1,3 +1,5 @@
+package stack
+
 /*
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
 
@@ -35,9 +37,9 @@
 */
 
 func isValid(s string) bool {
-	if len(s) & 1 == 1{
-        	return false
-   	}
+	if len(s)&1 == 1 {
+		return false
+	}
 	stack := make([]uint8, 0)
 	for k, _ := range s {
 		if isPush(s[k]) {

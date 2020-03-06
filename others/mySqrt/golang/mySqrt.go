@@ -1,3 +1,5 @@
+package others
+
 func mySqrt(x int) int {
 	if x < 2 {
 		return x

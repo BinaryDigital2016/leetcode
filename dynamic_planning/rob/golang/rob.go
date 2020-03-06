@@ -1,3 +1,5 @@
+package dp
+
 /*
 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
 
@@ -20,22 +22,22 @@
 
 // dp[n]=max(dp[n-1],dp[n-2]+nums[n])
 func rob(nums []int) int {
-    n := len(nums)
-    if n == 0{
-        return 0
-    }
+	n := len(nums)
+	if n == 0 {
+		return 0
+	}
 
-    dp := []int{0,nums[0]}
+	dp := []int{0, nums[0]}
 
-    for i:=2;i<=n;i++{
-        dp = append(dp, max(dp[i-1],dp[i-2]+nums[i-1]))
-    }
-    return dp[n]
+	for i := 2; i <= n; i++ {
+		dp = append(dp, max(dp[i-1], dp[i-2]+nums[i-1]))
+	}
+	return dp[n]
 }
 
-func max(a,b int) int{
-    if a>b {
-        return a
-    }
-    return b
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }

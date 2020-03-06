@@ -1,3 +1,10 @@
+package list
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -6,7 +13,7 @@
  * }
  */
 
- // 为啥超时 一脸懵逼
+// 为啥超时 一脸懵逼
 // func reverseList(head *ListNode) *ListNode {
 // 	if head == nil || head.Next == nil {
 // 		return head
@@ -41,13 +48,12 @@
 
 // 递归版
 func reverseList(head *ListNode) *ListNode {
-    if head==nil || head.Next==nil {
-        return head
-    }
-    cur := reverseList(head.Next) //最后一个节点
-    head.Next.Next = head //下一个节点指向自己，形成环
-    head.Next = nil //断掉环
-
+	if head == nil || head.Next == nil {
+		return head
+	}
+	cur := reverseList(head.Next) //最后一个节点
+	head.Next.Next = head         //下一个节点指向自己，形成环
+	head.Next = nil               //断掉环
 
 	return cur
 }

@@ -1,3 +1,13 @@
+package tree
+
+import "fmt"
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 /*
 给定一个二叉树，返回所有从根节点到叶子节点的路径。
 
@@ -18,46 +28,37 @@
 解释: 所有根节点到叶子节点的路径为: 1->2->5, 1->3
 */
 
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
-
-// 递归 
+// 递归
 func binaryTreePaths(root *TreeNode) []string {
-    if root == nil{
-        return []string{}
-    }
+	if root == nil {
+		return []string{}
+	}
 
-    paths := make([]string,0)
-    constructPath(root, "", &paths)
-    return paths
+	paths := make([]string, 0)
+	constructPath(root, "", &paths)
+	return paths
 }
 
 // slice需传指针 否则append导致底层数组重新分配时会分配新的数组
-func constructPath(node *TreeNode, path string, paths *[]string){
-    path += fmt.Sprintf("%d", node.Val)
-    if node.Left == nil && node.Right == nil{
-        *paths = append(*paths, path)
-        return
-    }
+func constructPath(node *TreeNode, path string, paths *[]string) {
+	path += fmt.Sprintf("%d", node.Val)
+	if node.Left == nil && node.Right == nil {
+		*paths = append(*paths, path)
+		return
+	}
 
-    path += "->"
-    if node.Left != nil {
-        //path += fmt.Sprintf("%d", node.Left.Val)
-        constructPath(node.Left, path, paths)
-    }
-    if node.Right != nil {
-        //path += fmt.Sprintf("%d", node.Right.Val)
-        constructPath(node.Right, path, paths)
-    }
+	path += "->"
+	if node.Left != nil {
+		//path += fmt.Sprintf("%d", node.Left.Val)
+		constructPath(node.Left, path, paths)
+	}
+	if node.Right != nil {
+		//path += fmt.Sprintf("%d", node.Right.Val)
+		constructPath(node.Right, path, paths)
+	}
 }
 
-// // 迭代 
+// // 迭代
 // func binaryTreePaths(root *TreeNode) []string {
 //     if root == nil{
 //         return []string{}
@@ -83,7 +84,7 @@ func constructPath(node *TreeNode, path string, paths *[]string){
 //             s = append(s, pathInfo{info.node.Right, info.path})
 //         }
 //     }
-    
+
 //     return paths
 // }
 

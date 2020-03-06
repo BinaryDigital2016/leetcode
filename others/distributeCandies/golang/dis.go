@@ -1,3 +1,5 @@
+package others
+
 /*
 排排坐，分糖果。
 
@@ -11,7 +13,7 @@
 
 返回一个长度为 num_people、元素之和为 candies 的数组，以表示糖果的最终分发情况（即 ans[i] 表示第 i 个小朋友分到的糖果数）。
 
- 
+
 
 示例 1：
 
@@ -52,21 +54,20 @@
 //     return ret
 // }
 
-
 func distributeCandies(candies int, num_people int) []int {
-    ret := make([]int,num_people)
-    i:=0
-    for candies != 0 {
-        ret[i%num_people] += min(i+1, candies)
-        candies -= min(i+1,candies)
-        i++
-    }
-    return ret
+	ret := make([]int, num_people)
+	i := 0
+	for candies != 0 {
+		ret[i%num_people] += min(i+1, candies)
+		candies -= min(i+1, candies)
+		i++
+	}
+	return ret
 }
 
-func min(a , b int) int {
-    if a < b{
-        return a
-    }
-    return b
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }

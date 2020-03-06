@@ -1,3 +1,10 @@
+package list
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 // // 递归
 // func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 //     //如果有一条链是nil，直接返回另外一条链
@@ -22,18 +29,18 @@
 
 // 非递归
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-    //如果有一条链是nil，直接返回另外一条链
-    if l1 == nil {
-        return l2
-    }
-    if l2 == nil {
-        return l1
-    }
+	//如果有一条链是nil，直接返回另外一条链
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
 
-    result := l1
+	result := l1
 	r := result
 
-    if l1.Val > l2.Val {
+	if l1.Val > l2.Val {
 		result = l2
 		l2 = l2.Next
 		r = result
@@ -42,26 +49,26 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		r = result
 	}
 
-    for l1 != nil && l2 != nil {
-        if l1.Val > l2.Val {
-            result.Next = l2
-            l2 = l2.Next
-            result = result.Next
-        } else {
-            result.Next = l1
-            l1 = l1.Next
-            result = result.Next
-        }
-    }
+	for l1 != nil && l2 != nil {
+		if l1.Val > l2.Val {
+			result.Next = l2
+			l2 = l2.Next
+			result = result.Next
+		} else {
+			result.Next = l1
+			l1 = l1.Next
+			result = result.Next
+		}
+	}
 
-    if l1 == nil && l2 != nil{
+	if l1 == nil && l2 != nil {
 		result.Next = l2
 	}
 
-	if l1 != nil && l2 == nil{
+	if l1 != nil && l2 == nil {
 		result.Next = l1
 	}
- 
+
 	return r
 
 }

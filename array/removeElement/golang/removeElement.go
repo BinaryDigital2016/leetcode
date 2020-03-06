@@ -1,3 +1,5 @@
+package array
+
 /*
 给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
 
@@ -25,12 +27,12 @@
 */
 
 func removeElement(nums []int, val int) int {
-    i,j:=0,0
-    for ;j<len(nums);j++{
-        if nums[j] != val{
-            nums[i]=nums[j]
-            i++
-        }
-    }
-    return i
+	i, j := 0, 0
+	for ; j < len(nums); j++ {
+		if nums[j] != val {
+			nums[i] = nums[j]
+			i++
+		}
+	}
+	return i
 }

@@ -1,3 +1,5 @@
+package array
+
 func merge(nums1 []int, m int, nums2 []int, n int) {
 	tmp := make([]int, len(nums1))
 	copy(tmp, nums1) //append扩容会改变底层数组，所以不能直接修改nums1

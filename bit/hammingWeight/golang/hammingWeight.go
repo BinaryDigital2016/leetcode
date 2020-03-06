@@ -1,3 +1,5 @@
+package bit
+
 /*
 统计1的个数
 */
@@ -14,10 +16,10 @@
 
 // n&(n-1)将最低位1置0
 func hammingWeight(num uint32) int {
-    count := 0
-    for num > 0{
-        count++
-        num = num & (num-1)
-    }
-    return count
+	count := 0
+	for num > 0 {
+		count++
+		num = num & (num - 1)
+	}
+	return count
 }

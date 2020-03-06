@@ -1,3 +1,5 @@
+package others
+
 /*
 算法：
 
@@ -9,7 +11,7 @@
 ((22k+1)mod  3)=((2×4k)mod  3)=((2×(3+1)k)mod  3)=2((2^{2k + 1}) \mod 3) = ((2 \times 4^k) \mod 3) = ((2 \times(3 + 1)^k) \mod 3) = 2((22k+1)mod3)=((2×4k)mod3)=((2×(3+1)k)mod3)=2
 
     若 xxx 为 2 的幂且 x%3 == 1，则 xxx 为 4 的幂。
-    
+
     我们通过计算 x=22kmod  3x = 2^{2k} \mod 3x=22kmod3 来理解：
 
     首先 22k=22k=4k2^{2k} = {2^2}^k = 4^k22k=22k=4k 且 4=3+14 = 3 + 14=3+1。
@@ -20,7 +22,7 @@
 */
 
 func isPowerOfFour(num int) bool {
-    return num > 0 && 
-            num & ( num - 1 ) == 0 && //是2的幂
-            num % 3 == 1
+	return num > 0 &&
+		num&(num-1) == 0 && //是2的幂
+		num%3 == 1
 }
