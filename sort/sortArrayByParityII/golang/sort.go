@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 /*
 给定一个非负整数数组 A， A 中一半整数是奇数，一半整数是偶数。
@@ -24,7 +24,7 @@ package sort
     0 <= A[i] <= 1000
 */
 // // 两次遍历
-// func sortArrayByParityII(A []int) []int {
+// func SortArrayByParityII(A []int) []int {
 //     ret := make([]int, len(A))
 //     i := 0
 //     for j:=0;j<len(A);j++{
@@ -46,7 +46,7 @@ package sort
 // }
 
 // 双指针，找到不符合规则的偶数位，交换下一个不符合规则的奇数位
-func sortArrayByParityII(A []int) []int {
+func SortArrayByParityII(A []int) []int {
 	//i := 0
 	j := 1
 	for i := 0; i < len(A); i += 2 {

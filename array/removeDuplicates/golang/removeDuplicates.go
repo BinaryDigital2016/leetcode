@@ -22,7 +22,7 @@ package array
 你不需要考虑数组中超出新长度后面的元素。
 */
 
-// func removeDuplicates(nums []int) int {
+// func RemoveDuplicates(nums []int) int {
 //     size := len(nums)
 //     if size <= 1{
 //         return size
@@ -43,7 +43,7 @@ package array
 //     return size - cnt
 // }
 
-func removeDuplicates(nums []int) int {
+func RemoveDuplicates(nums []int) int {
 	i, j := 0, 1
 	for ; j < len(nums); j++ {
 		if nums[i] != nums[j] {

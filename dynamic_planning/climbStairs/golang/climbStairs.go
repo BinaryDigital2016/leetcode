@@ -9,7 +9,7 @@ package dp
 // }
 
 // 斐波那契非递归
-// func climbStairs(n int) int {
+// func ClimbStairs(n int) int {
 //     if n < 2{
 //         return 1
 //     }
@@ -29,7 +29,7 @@ package dp
 // }
 
 // 动态规划
-func climbStairs(n int) int {
+func ClimbStairs(n int) int {
 	if n < 2 {
 		return 1
 	}

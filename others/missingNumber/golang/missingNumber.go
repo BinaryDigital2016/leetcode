@@ -1,7 +1,7 @@
 package others
 
 // // 暴力求解
-// func missingNumber(nums []int) int {
+// func MissingNumber(nums []int) int {
 //     n := len(nums)
 //     f := make([]int8,n+1)
 //     for _,v := range nums{
@@ -18,7 +18,7 @@ package others
 // }
 
 // // 异或
-// func missingNumber(nums []int) int {
+// func MissingNumber(nums []int) int {
 //     f := 0
 //     n := len(nums)
 //     for i:=1; i <= n;i++{
@@ -33,7 +33,7 @@ package others
 // }
 
 // 求和
-func missingNumber(nums []int) int {
+func MissingNumber(nums []int) int {
 	sum := 0
 	for k, v := range nums {
 		sum += k + 1

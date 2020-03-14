@@ -45,7 +45,7 @@ import "sort"
 //     return sum
 // }
 
-func findSwapValues(array1 []int, array2 []int) []int {
+func FindSwapValues(array1 []int, array2 []int) []int {
 	sum1 := sumList(array1)
 	sum2 := sumList(array2)
 	diff := sum1 - sum2

@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 import "strings"
 
@@ -70,7 +70,7 @@ s = "abpcplea", d = ["a","b","c"]
 // }
 
 // 不排序
-func findLongestWord(s string, d []string) string {
+func FindLongestWord(s string, d []string) string {
 	ret := ""
 	for _, v := range d {
 		if isSubString(s, v) && isMatcher(v, ret) {

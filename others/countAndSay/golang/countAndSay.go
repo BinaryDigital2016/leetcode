@@ -33,7 +33,7 @@ package others
 
 */import "strconv"
 
-func countAndSay(n int) string {
+func CountAndSay(n int) string {
 	i := 1
 	result := strconv.Itoa(1)
 	for ; i < n; i++ {

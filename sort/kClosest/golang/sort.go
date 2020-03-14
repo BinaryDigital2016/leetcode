@@ -1,11 +1,11 @@
-package sort
+package mysort
 
 // 本质为求k小元素
 
 //排序取前k个,略
 
 //快排变形
-func kClosest(points [][]int, K int) [][]int {
+func KClosest(points [][]int, K int) [][]int {
 	partition(points, 0, len(points)-1, K)
 	return points[0:K]
 }

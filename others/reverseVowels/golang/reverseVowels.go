@@ -1,6 +1,6 @@
 package others
 
-func reverseVowels(s string) string {
+func ReverseVowels(s string) string {
 	b := []byte(s)
 	i, j := 0, len(s)-1
 	for i <= j {

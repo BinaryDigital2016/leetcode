@@ -19,7 +19,7 @@ package others
 */
 
 // //使用异或运算：相同值异或为自身，不同值异或为0，0异或任何数等于0
-// func singleNumber(nums []int) int {
+// func SingleNumber(nums []int) int {
 //     ret := 0
 //     for _,v:=range nums{
 //         ret ^= v
@@ -28,7 +28,7 @@ package others
 // }
 
 // 使用map暴力解
-func singleNumber(nums []int) int {
+func SingleNumber(nums []int) int {
 	m := make(map[int]struct{})
 	for _, v := range nums {
 		if _, ok := m[v]; ok {

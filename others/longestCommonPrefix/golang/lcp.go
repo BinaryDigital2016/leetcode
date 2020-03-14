@@ -23,7 +23,7 @@ import "fmt"
 所有输入只包含小写字母 a-z 。
 */
 
-func longestCommonPrefix(strs []string) string {
+func LongestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ""
 	}

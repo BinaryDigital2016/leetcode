@@ -22,11 +22,11 @@ package string
 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。
 */
 
-// func strStr(haystack string, needle string) int {
+// func StrStr(haystack string, needle string) int {
 //     return strings.Index(haystack, needle)
 // }
 
-func strStr(haystack string, needle string) int {
+func StrStr(haystack string, needle string) int {
 	if len(needle) <= 0 || haystack == needle {
 		return 0
 	}

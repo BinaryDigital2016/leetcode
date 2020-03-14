@@ -15,7 +15,7 @@ import "fmt" /*
 输入: a = "1010", b = "1011"
 输出: "10101"
 */
-func addBinary(a string, b string) string {
+func AddBinary(a string, b string) string {
 	var carry uint8 = '0'
 	n := 0
 	n1, n2 := len(a), len(b)

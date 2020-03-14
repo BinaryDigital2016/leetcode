@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 /*
 对链表进行插入排序

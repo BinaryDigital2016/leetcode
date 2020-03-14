@@ -1,7 +1,7 @@
-package sort
+package mysort
 
 // 按对角线冒泡排序
-func diagonalSort(mat [][]int) [][]int {
+func DiagonalSort(mat [][]int) [][]int {
 	if len(mat) == 0 || len(mat[0]) == 0 {
 		return mat
 	}

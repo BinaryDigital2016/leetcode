@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 import (
 	"sort"
@@ -33,7 +33,7 @@ import (
     拼接起来的数字可能会有前导 0，最后结果不需要去掉前导 0
 */
 
-func minNumber(nums []int) string {
+func MinNumber(nums []int) string {
 	t := make(MyStringSlice, len(nums))
 	for k, v := range nums {
 		t[k] = strconv.Itoa(v)

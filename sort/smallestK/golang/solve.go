@@ -1,6 +1,6 @@
-package sort
+package mysort
 
-func smallestK(arr []int, k int) []int {
+func SmallestK(arr []int, k int) []int {
 	partition(arr, 0, len(arr)-1, k)
 	return arr[:k]
 }

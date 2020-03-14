@@ -36,7 +36,7 @@ package others
 第四次，ans[0] += 4，最终数组变为 [5,2,3]。
 */
 
-// func distributeCandies(candies int, num_people int) []int {
+// func DistributeCandies(candies int, num_people int) []int {
 //     ret := make([]int,num_people)
 //     for candies > 0 {
 //         i:=0
@@ -54,7 +54,7 @@ package others
 //     return ret
 // }
 
-func distributeCandies(candies int, num_people int) []int {
+func DistributeCandies(candies int, num_people int) []int {
 	ret := make([]int, num_people)
 	i := 0
 	for candies != 0 {

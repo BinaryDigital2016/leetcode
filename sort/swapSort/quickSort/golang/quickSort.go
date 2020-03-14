@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 import "fmt"
 
@@ -169,4 +169,3 @@ func partition2(list *LList, l, r int) int {
 	list.Swap(i, l)
 	return i
 }
-

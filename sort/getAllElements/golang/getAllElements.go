@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 type TreeNode struct {
 	Val   int
@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 // // 遍历后排序
-// func getAllElements(root1 *TreeNode, root2 *TreeNode) []int {
+// func GetAllElements(root1 *TreeNode, root2 *TreeNode) []int {
 //     ret := make([]int,0)
 //     traverse(root1, &ret)
 //     traverse(root2, &ret)
@@ -27,7 +27,7 @@ type TreeNode struct {
 // }
 
 // 遍历后合并列表
-func getAllElements(root1 *TreeNode, root2 *TreeNode) []int {
+func GetAllElements(root1 *TreeNode, root2 *TreeNode) []int {
 	s1 := make([]int, 0)
 	s2 := make([]int, 0)
 	traverse(root1, &s1)

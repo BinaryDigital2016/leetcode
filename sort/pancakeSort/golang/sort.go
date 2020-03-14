@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 /*
 每次都把当前区间最大的数移动到当前区间的最后面
@@ -10,7 +10,7 @@ package sort
 作者：da-li-wang
 链接：https://leetcode-cn.com/problems/pancake-sorting/solution/c-jian-dan-shu-xue-fa-by-da-li-wang/
 */
-func pancakeSort(A []int) []int {
+func PancakeSort(A []int) []int {
 	ret := make([]int, 0, len(A))
 	for i := len(A) - 1; i > 0; i-- {
 		j := maxIndex(A[:i+1])

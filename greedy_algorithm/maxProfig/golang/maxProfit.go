@@ -29,7 +29,7 @@ package greedy
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
 */
 // //每次找到波峰波谷，把所有的波峰-波谷加起来
-// func maxProfit(prices []int) int {
+// func MaxProfit(prices []int) int {
 //     if len(prices) == 0 {
 //         return 0
 //     }
@@ -55,7 +55,7 @@ package greedy
 // }
 
 //贪心算法，只要下一天的价格大于当天就买入，下一天卖出
-func maxProfit(prices []int) int {
+func MaxProfit(prices []int) int {
 	ret := 0
 	i := 0
 	for i < len(prices)-1 {

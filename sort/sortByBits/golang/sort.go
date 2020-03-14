@@ -1,8 +1,8 @@
-package sort
+package mysort
 
 import "sort"
 
-func sortByBits(arr []int) []int {
+func SortByBits(arr []int) []int {
 	m := MyIntSlice(arr)
 	sort.Sort(m)
 	return arr

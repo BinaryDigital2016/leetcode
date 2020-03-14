@@ -1,9 +1,9 @@
-package sort
+package mysort
 
 import "sort"
 
 // 排序
-func wiggleSort(nums []int) {
+func WiggleSort(nums []int) {
 	newNums := sort.IntSlice(nums)
 	sort.Sort(newNums)
 	n := len(newNums)

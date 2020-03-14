@@ -1,4 +1,4 @@
-package sort
+package mysort
 
 /*
 给你两个数组，arr1 和 arr2，
@@ -25,7 +25,7 @@ package sort
     arr2 中的每个元素 arr2[i] 都出现在 arr1 中
 */
 // 暴力法
-// func relativeSortArray(arr1 []int, arr2 []int) []int {
+// func RelativeSortArray(arr1 []int, arr2 []int) []int {
 //     t := 0
 //     for i:=0;i<len(arr2);i++{
 //         for j:=0;j<len(arr1);j++{
@@ -43,7 +43,7 @@ package sort
 // }
 
 // 计数排序
-func relativeSortArray(arr1 []int, arr2 []int) []int {
+func RelativeSortArray(arr1 []int, arr2 []int) []int {
 	tmp := make([]int, 1001) //arr1.length, arr2.length <= 1000
 	ret := make([]int, 0, len(arr1))
 	for _, v := range arr1 {

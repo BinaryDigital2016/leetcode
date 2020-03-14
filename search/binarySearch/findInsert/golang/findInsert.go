@@ -24,7 +24,7 @@ package search
 输入: [1,3,5,6], 0
 输出: 0
 */
-// func searchInsert(nums []int, target int) int {
+// func SearchInsert(nums []int, target int) int {
 //     pre := -1
 //     for k,v := range nums{
 //         if v < target {
@@ -42,7 +42,7 @@ package search
 
 //
 
-func searchInsert(nums []int, target int) int {
+func SearchInsert(nums []int, target int) int {
 	i, j := 0, len(nums)
 	for i < j {
 		m := (i + j) / 2

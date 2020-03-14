@@ -16,7 +16,7 @@ package string
 输入: "Hello World"
 输出: 5
 */
-// func lengthOfLastWord(s string) int {
+// func LengthOfLastWord(s string) int {
 //     i := strings.LastIndex(s," ")
 //     if i < 0{
 //         return len(s)
@@ -27,7 +27,7 @@ package string
 //     return len(s)-i-1
 // }
 
-func lengthOfLastWord(s string) int {
+func LengthOfLastWord(s string) int {
 	n := len(s)
 	ret := 0
 	for i := n - 1; i >= 0; i-- {

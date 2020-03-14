@@ -19,7 +19,7 @@ package string
 
     S 只包含小写字母并且长度在[1, 500]区间内。
 */
-func reorganizeString(S string) string {
+func ReorganizeString(S string) string {
 	n := len(S)
 	arr := make([]int, 26)
 	b := []byte(S)

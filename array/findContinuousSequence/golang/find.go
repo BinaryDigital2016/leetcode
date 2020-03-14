@@ -9,7 +9,7 @@ package array
 // 暴力求解：枚举每个正整数，以其为起点往后求和，找出所有和为target的序列，略
 
 // 滑动窗口(双指针))
-func findContinuousSequence(target int) [][]int {
+func FindContinuousSequence(target int) [][]int {
 	l, r, sum := 1, 2, 0
 	ret := make([][]int, 0)
 	for l < r { //至少两个数，不取等

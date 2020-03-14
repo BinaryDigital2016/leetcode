@@ -21,7 +21,7 @@ package dp
 */
 
 // dp[n]=max(dp[n-1],dp[n-2]+nums[n])
-func rob(nums []int) int {
+func Rob(nums []int) int {
 	n := len(nums)
 	if n == 0 {
 		return 0

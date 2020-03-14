@@ -85,7 +85,7 @@ sk   	5 	5 	4 	3 	1 	1
 根据定义，最大的满足 k≤s的 k 即为所求的 h。
 在表中，这个 k 为 3，因此 h 指数为 3。
 */
-func hIndex(citations []int) int {
+func HIndex(citations []int) int {
 	n := len(citations)
 	s := make([]int, n+1)
 	for _, v := range citations {
