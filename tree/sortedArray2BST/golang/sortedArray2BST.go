@@ -25,15 +25,15 @@ type TreeNode struct {
 }
 
 // 二叉搜索树的中序遍历为有序数组，该题为二叉搜索树的逆过程，答案不唯一
-func sortedArrayToBST(nums []int) *TreeNode {
+func SortedArrayToBST(nums []int) *TreeNode {
 	if len(nums) == 0 {
 		return nil
 	}
 
 	p := len(nums) / 2
 	root := &TreeNode{Val: nums[p]}
-	root.Left = sortedArrayToBST(nums[:p])
-	root.Right = sortedArrayToBST(nums[p+1:])
+	root.Left = SortedArrayToBST(nums[:p])
+	root.Right = SortedArrayToBST(nums[p+1:])
 
 	return root
 
