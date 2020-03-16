@@ -45,19 +45,31 @@ type TreeNode struct {
  */
 
 // 递归
-//  func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
-//     if root==nil || p == nil || q==nil {
-//         return root
-//     }
-
-//     if p.Val > root.Val && q.Val > root.Val{
-//         return lowestCommonAncestor(root.Right, p,q)
-//     }
-//     if p.Val < root.Val && q.Val < root.Val{
-//         return lowestCommonAncestor(root.Left,p,q)
-//     }
-//     return root
-// }
+//func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+//	if root == nil {
+//		return root
+//	}
+//
+//	min,max:=min(p.Val,q.Val)
+//	if root.Val >= min && root.Val <= max{
+//		return root
+//	}
+//	if root.Val <= min {
+//		return lowestCommonAncestor(root.Right, p,q)
+//	}
+//	if root.Val >= max {
+//		return lowestCommonAncestor(root.Left,p,q)
+//	}
+//
+//	return nil
+//}
+//
+//func min(a,b int) (int,int) {
+//	if a<b{
+//		return a,b
+//	}
+//	return b,a
+//}
 
 // 迭代
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {

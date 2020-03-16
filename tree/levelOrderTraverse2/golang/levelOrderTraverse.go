@@ -47,7 +47,7 @@ func levelOrderBottom(root *TreeNode) [][]int {
 	for !q.Empty() {
 		t := make([]int, 0)
 		n := q.Size()
-		for i := 0; i < n; i++ { //每次循环开始，队列中的节点都是统一层的节点
+		for i := 0; i < n; i++ { //每次循环开始，队列中的节点都是同一层的节点
 			cur := q.Pop()
 			if cur.Left == nil && cur.Right == nil {
 				continue
