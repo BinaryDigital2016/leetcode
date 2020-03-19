@@ -42,9 +42,6 @@ type TreeNode struct {
 //     }
 //     return isMirror(root.Left, root.Right)
 // }
-// func isSymmetric(root *TreeNode) bool {
-//     return isMirror(root, root)
-// }
 
 // func isMirror(l *TreeNode, r *TreeNode) bool{
 //     if l == nil && r == nil {
