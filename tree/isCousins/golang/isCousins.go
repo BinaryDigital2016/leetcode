@@ -53,6 +53,7 @@ func preorder(root *TreeNode, p int, info map[int]nodeInfo) {
 	info[root.Val] = nodeInfo{p, info[p].d + 1}
 	preorder(root.Left, root.Val, info)
 	preorder(root.Right, root.Val, info)
+	math.max
 }
 
 type nodeInfo struct {
