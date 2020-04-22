@@ -37,7 +37,9 @@ func backtrace(k, n int, trace []int, res *[][]int) {
 		}
 		l := len(trace)
 		trace = append(trace, i)
-		backtrace(k, n-i, copy(trace), res)
+		ctrace := make([]int, len(trace))
+		copy(ctrace, trace)
+		backtrace(k, n-i, ctrace, res)
 		trace = trace[:l]
 	}
 }
@@ -54,10 +56,53 @@ func valid(a []int, b int) bool {
 	return true
 }
 
-func copy(a []int) []int {
-	b := make([]int, len(a))
-	for i := 0; i < len(a); i++ {
-		b[i] = a[i]
-	}
-	return b
-}
+// func copy(a []int) []int {
+// 	b := make([]int, len(a))
+// 	for i := 0; i < len(a); i++ {
+// 		b[i] = a[i]
+// 	}
+// 	return b
+// }
+
+//func combinationSum3(k int, n int) [][]int {
+//	ret := make([][]int, 0)
+//	backtrace(k, n, []int{}, &ret)
+//	return ret
+//}
+//
+//func backtrace(k, n int, trace []int, res *[][]int) {
+//	if len(trace) == k && n == 0 {
+//		*res = append(*res, trace)
+//		return
+//	}
+//
+//	for i := 1; i < 10; i++ {
+//		if !valid(trace, i) || n < i {
+//			continue
+//		}
+//		l := len(trace)
+//		trace = append(trace, i)
+//		backtrace(k, n-i, copy(trace), res)
+//		trace = trace[:l]
+//	}
+//}
+//
+//func valid(a []int, b int) bool {
+//	for _, v := range a {
+//		if v == b { //已在列表中
+//			return false
+//		}
+//		if v > b {
+//			return false
+//		}
+//	}
+//	return true
+//}
+//
+//func copy(a []int) []int {
+//	b := make([]int, len(a))
+//	for i := 0; i < len(a); i++ {
+//		b[i] = a[i]
+//	}
+//	return b
+//}
