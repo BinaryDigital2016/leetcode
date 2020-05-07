@@ -34,5 +34,6 @@ func minArray(numbers []int) int {
 			j -= 1
 		}
 	}
+
 	return numbers[i]
 }

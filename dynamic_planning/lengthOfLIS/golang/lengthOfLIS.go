@@ -25,7 +25,7 @@ func lengthOfLIS(nums []int) int {
 		dp[i] = 1 //最初的最长上升子序列长度为1
 	}
 
-	for i := 0; i < n; i++ {
+	for i := 1; i < n; i++ {
 		for j := 0; j < i; j++ {
 			if nums[i] > nums[j] { //当前值更大
 				dp[i] = max(dp[i], dp[j]+1)
